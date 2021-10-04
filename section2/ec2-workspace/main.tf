@@ -1,6 +1,6 @@
 provider "aws" {
-    region  = "eu-west-3"
-    profile = "sleek-terraformcourse"
+    region    = "eu-west-3"
+    profile   = "sleek-terraformcourse"
 }
 
 module "sg_module" {
@@ -9,8 +9,8 @@ module "sg_module" {
 
 module "ec2_module_1" {
     amiid       = "${local.amiid}"
-    sg_id     = "${module.sg_module.sg_module_id}"
-    source    = "./ec2_module"
+    sg_id       = "${module.sg_module.sg_module_id}"
+    source      = "./ec2_module"
 }
 
 locals {
@@ -19,9 +19,9 @@ locals {
     # Local environment variables across workspaces
 
     amiid_env = {
-        default    = "ami-06602da18c878f98d"
-        staging    = "ami-06602da18c878f98d"
-        production = "ami-0f7cd40eac2214b37"
+        default      = "ami-06602da18c878f98d"
+        staging      = "ami-06602da18c878f98d"
+        production   = "ami-0f7cd40eac2214b37"
     }
 
     #The lookup function is used to call the local env variables

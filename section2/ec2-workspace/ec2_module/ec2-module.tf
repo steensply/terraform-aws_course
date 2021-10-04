@@ -1,7 +1,7 @@
 
 variable "amiid" {
     type              = string  
-    #default           = "ami-0f7cd40eac2214b37"
+    #default          = "ami-0f7cd40eac2214b37"
 }
 
 variable "sg_id" {}
