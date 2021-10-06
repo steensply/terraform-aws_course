@@ -2,7 +2,7 @@
 
 provider "aws" {
     region         = "eu-west-3"
-    profile        = "sleek-terraformcourse"
+    profile        = ""
 }
 
 variable "vpcid" {

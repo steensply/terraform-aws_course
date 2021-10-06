@@ -3,7 +3,7 @@
 # Always use the profile in the configuration
 provider "aws" {
     region = "eu-west-3"
-    profile = "sleek-terraformcourse"
+    profile = ""
 }
 
 // Handling strings

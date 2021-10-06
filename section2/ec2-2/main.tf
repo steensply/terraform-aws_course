@@ -1,6 +1,6 @@
 provider "aws" {
     region  = "eu-west-3"
-    profile = "sleek-terraformcourse"
+    profile = ""
 }
 
 module "sg_module" {
