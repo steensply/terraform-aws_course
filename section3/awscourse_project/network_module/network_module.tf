@@ -10,7 +10,7 @@ resource "aws_security_group" "public_sg" {
     vpc_id           = "${module.shared_vars.vpcid}"
 
     ingress {
-        description     = "Inbound HTTP"
+        #description     = "Inbound HTTP"
         from_port       = 80
         to_port         = 80
         protocol        = "tcp"
@@ -18,16 +18,14 @@ resource "aws_security_group" "public_sg" {
     }
 
     egress {
-        description     = "Outbount HTTP"
+        #description     = "Outbound HTTP"
         from_port       = 80
         to_port         = 80
         protocol        = "tcp"
         cidr_blocks     = [ "0.0.0.0/0" ]
     }
 
-    tags = {
-        Name        = "Public SG"
-    }
+
 }
 
 resource "aws_security_group" "private_sg" {
@@ -36,25 +34,22 @@ resource "aws_security_group" "private_sg" {
     vpc_id           = "${module.shared_vars.vpcid}"
 
     ingress {
-        description     = "Inbound HTTP from Public SG"
+        #description     = "Inbound HTTP from Public SG"
         from_port       = 80
         to_port         = 80
         protocol        = "tcp"
-       security_groups = [ "${aws_security_group.public_sg.id}" ]
+        security_groups = [ "${aws_security_group.public_sg.id}" ]
     }
 
     egress {
-        description     = "Outbount HTTP"
+        #description     = "Outbound HTTP"
         from_port       = 80
         to_port         = 80
         protocol        = "tcp"
         cidr_blocks     = [ "0.0.0.0/0" ]
     }
 
-    tags = {
-        Name        = "Private SG"
-    }
- 
+
 }
 
 output "publicsg_id" {

@@ -6,11 +6,11 @@ variable privatesg_id {}
 variable tg_arns {}
 
 resource "aws_launch_configuration" "sampleapp_lc" {
-  name_prefix   = "sampleapp-lc-${module.shared_vars.env_suffix}"
-  image_id      = "${module.shared_vars.amiid}"
-  instance_type = "${module.shared_vars.instance_type}"
-  key_name      = "${module.shared_vars.key_name}"
-  user_data     = "${file("./assets/userdata.txt")}"
+  name_prefix        = "sampleapp-lc-${module.shared_vars.env_suffix}"
+  image_id           = "${module.shared_vars.amiid}"
+  instance_type      = "${module.shared_vars.instance_type}"
+  key_name           = "${module.shared_vars.key_name}"
+  user_data          = "${file("./assets/userdata.txt")}"
   security_groups    = [ "${var.privatesg_id}"]
 
 }

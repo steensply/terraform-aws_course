@@ -18,25 +18,26 @@ locals {
     publicsubnetid = "${lookup(local.publicsubnetid_env, local.env)}"
 
     publicsubnetid1_env = {
-        default     = "subnet-c8613885"
-        staging     = "subnet-c8613885"
-        production  = "subnet-c8613885"
+        default     = "subnet-eeeffb95"
+        staging     = "subnet-eeeffb95"
+        production  = "subnet-eeeffb95"
+        
     }
 
     publicsubnetid1 = "${lookup(local.publicsubnetid1_env, local.env)}"
 
     privatesubnetid_env = {
-        default     = "subnet-eeeffb95"
-        staging     = "subnet-eeeffb95"
-        production  = "subnet-eeeffb95"
+        default     = "subnet-c8613885"
+        staging     = "subnet-c8613885"
+        production  = "subnet-c8613885"
     }
 
     privatesubnetid = "${lookup(local.privatesubnetid_env, local.env)}"
 
     amiid_env = {
-        default     = "ami-06602da18c878f98d"
-        staging     = "ami-06602da18c878f98d"
-        production  = "ami-0f7cd40eac2214b37"
+        default     = "ami-072056ff9d3689e7b"
+        staging     = "ami-072056ff9d3689e7b"
+        production  = "ami-072056ff9d3689e7b"
     }
 
     amiid = "${lookup(local.amiid_env, local.env)}"
